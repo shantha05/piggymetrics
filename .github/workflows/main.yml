@@ -12,11 +12,11 @@ jobs:
       with:
         keyvault: "azurespringcloud20"
         secrets: "AZURE-CREDENTIALS-FOR-SPRING"           # Master key to open all doors in the building
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: keyvault
       id: keyvaultaction
     - uses: azure/login@v1
       with:
         creds: ${{ steps.keyvaultaction.outputs.AZURE-CREDENTIALS-FOR-SPRING }}
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     - name: Azure CLI script
       uses: azure/CLI@v1
       with:
