@@ -7,6 +7,7 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}           # Strong box key you generated in the first step
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     - uses: Azure/get-keyvault-secrets@v1.0
       with:
         keyvault: "azurespringcloud20"
